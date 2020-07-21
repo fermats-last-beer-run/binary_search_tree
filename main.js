@@ -1,6 +1,4 @@
-"use strict";
-
-class BinarySearchNode {
+class BinarySearchTree {
     constructor(data, left, right, parent = null) {
         this.data = data
         this.left = left
@@ -56,7 +54,7 @@ class BinarySearchNode {
 
     insertTree(tree, data, parent) {
         if (tree === null) {
-            let node = new BinarySearchNode(data, null, null, parent)
+            let node = new BinarySearchTree(data, null, null, parent)
             if (parent.data > data) {
                 parent.left = node
             } else {
@@ -73,9 +71,12 @@ class BinarySearchNode {
     }
 }
 
-let root_node = new BinarySearchNode(5, null, null)
+let root_node = new BinarySearchTree(5, null, null)
 
 let i = 1
 for (i; i<=10; i++) {
+    // This draws a tree of 5 [1 [null, right]] [5 [null, right]] 
+    // where each tree then branches exclusively to the right
+    // meaning some balancing mechanism needs to be implemented
     root_node.insertTree(root_node, i, null)
 }
