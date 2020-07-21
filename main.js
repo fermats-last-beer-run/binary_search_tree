@@ -78,5 +78,8 @@ for (i; i<=10; i++) {
     // This draws a tree of 5 [1 [null, right]] [5 [null, right]] 
     // where each tree then branches exclusively to the right
     // meaning some balancing mechanism needs to be implemented
-    root_node.insertTree(root_node, i, null)
+    // probably save that for another time and just swap i for Math.random
+
+    // root_node.insertTree(root_node, i, null)
+    root_node.insertTree(root_node, Math.floor(Math.random() * 100), null)
 }
